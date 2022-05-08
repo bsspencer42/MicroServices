@@ -1,7 +1,11 @@
-com/microservices/trainer/TrainerRegistrationRequest.class
-com/microservices/trainer/Trainer.class
-com/microservices/trainer/TrainerService.class
+com/microservices/trainer/service/TrainerService.class
+com/microservices/trainer/repo/TrainerRepository.class
+com/microservices/trainer/api/TrainerController.class
+com/microservices/trainer/TrainerResponse$TrainerResponseBuilder.class
+com/microservices/trainer/TrainerResponse.class
+com/microservices/trainer/domain/Trainer.class
+com/microservices/trainer/service/TrainerServiceInterface.class
+com/microservices/trainer/domain/Trainer$TrainerBuilder.class
+com/microservices/trainer/domain/Role.class
+com/microservices/trainer/repo/RoleRepository.class
 com/microservices/trainer/TrainerApplication.class
-com/microservices/trainer/TrainerController.class
-com/microservices/trainer/Trainer$TrainerBuilder.class
-com/microservices/trainer/TrainerRepository.class
