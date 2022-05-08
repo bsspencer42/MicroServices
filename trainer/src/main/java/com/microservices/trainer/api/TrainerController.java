@@ -1,14 +1,19 @@
 package com.microservices.trainer.api;
 
 import com.microservices.trainer.TrainerResponse;
+import com.microservices.trainer.domain.Role;
 import com.microservices.trainer.domain.Trainer;
 import com.microservices.trainer.service.TrainerService;
 import com.microservices.trainer.service.TrainerServiceInterface;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 
 @Slf4j
@@ -18,16 +23,26 @@ import java.util.List;
 public class TrainerController {
     private final TrainerService trainerService;
 
-    @PostMapping
-    public ResponseEntity<TrainerResponse> registerTrainer(@RequestBody Trainer trainerRequest) {
+    @PostMapping("/trainer/save")
+    public ResponseEntity<Trainer> saveTrainer(@RequestBody Trainer trainer) {
         // TODO Add code for bad input
         // TODO TRY.CATCH for trainer already exists
-        log.info("new customer registration {}", trainerRequest);
+        log.info("new customer registration {}", trainer);
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/trainer/save").toUriString());
         // Register trainer
-        Trainer trainer = trainerService.saveTrainer(trainerRequest);
-        // Create Response
-        TrainerResponse response = createTrainerRegistrationResponse(trainer);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.created(uri).body(trainerService.saveTrainer(trainer));
+    }
+
+    @PostMapping("/role/save")
+    public ResponseEntity<Role> saveRole(@RequestBody Role role) {
+        URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("/api/role/save").toUriString());
+        return ResponseEntity.created(uri).body(trainerService.saveRole(role));
+    }
+
+    @PostMapping("/role/addtouser")
+    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
+        trainerService.addRoleToUser(form.getUserName(), form.getRoleName());
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/trainers")
@@ -35,15 +50,10 @@ public class TrainerController {
         return ResponseEntity.ok().body(trainerService.getTrainers());
     }
 
-    private TrainerResponse createTrainerRegistrationResponse(Trainer trainer) {
-        TrainerResponse trainerResponse = TrainerResponse.builder()
-                .trainerId(trainer.getId())
-                .firstName(trainer.getFirstName())
-                .lastName(trainer.getLastName())
-                .email(trainer.getEmail())
-                .build();
-        return trainerResponse;
-    }
+}
 
-
+@Data
+class RoleToUserForm {
+    private String userName;
+    private String roleName;
 }
