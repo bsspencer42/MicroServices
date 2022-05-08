@@ -1,0 +1,7 @@
+com/microservices/trainer/TrainerRegistrationRequest.class
+com/microservices/trainer/Trainer.class
+com/microservices/trainer/TrainerService.class
+com/microservices/trainer/TrainerApplication.class
+com/microservices/trainer/TrainerController.class
+com/microservices/trainer/Trainer$TrainerBuilder.class
+com/microservices/trainer/TrainerRepository.class
