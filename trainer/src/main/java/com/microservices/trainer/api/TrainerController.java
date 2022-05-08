@@ -9,10 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/")
+@RequestMapping("/api")
 public class TrainerController {
     private final TrainerService trainerService;
 
@@ -26,6 +28,11 @@ public class TrainerController {
         // Create Response
         TrainerResponse response = createTrainerRegistrationResponse(trainer);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/trainers")
+    public ResponseEntity<List<Trainer>> getTrainers() {
+        return ResponseEntity.ok().body(trainerService.getTrainers());
     }
 
     private TrainerResponse createTrainerRegistrationResponse(Trainer trainer) {
