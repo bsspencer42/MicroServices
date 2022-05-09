@@ -1,14 +1,11 @@
 package com.microservices.trainer.api;
 
-import com.microservices.trainer.TrainerResponse;
 import com.microservices.trainer.domain.Role;
 import com.microservices.trainer.domain.Trainer;
 import com.microservices.trainer.service.TrainerService;
-import com.microservices.trainer.service.TrainerServiceInterface;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;

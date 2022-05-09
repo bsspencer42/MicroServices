@@ -1,10 +1,11 @@
 com/microservices/trainer/service/TrainerService.class
 com/microservices/trainer/repo/TrainerRepository.class
+com/microservices/trainer/api/RoleToUserForm.class
 com/microservices/trainer/api/TrainerController.class
-com/microservices/trainer/TrainerResponse$TrainerResponseBuilder.class
-com/microservices/trainer/TrainerResponse.class
 com/microservices/trainer/domain/Trainer.class
+com/microservices/trainer/security/SecurityConfig.class
 com/microservices/trainer/service/TrainerServiceInterface.class
+com/microservices/trainer/filter/CustomAuthenticationFilter.class
 com/microservices/trainer/domain/Trainer$TrainerBuilder.class
 com/microservices/trainer/domain/Role.class
 com/microservices/trainer/repo/RoleRepository.class

@@ -1,9 +1,10 @@
-/Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/TrainerResponse.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/service/TrainerServiceInterface.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/domain/Trainer.java
+/Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/filter/CustomAuthenticationFilter.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/service/TrainerService.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/repo/RoleRepository.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/api/TrainerController.java
+/Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/security/SecurityConfig.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/TrainerApplication.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/repo/TrainerRepository.java
 /Users/bradleyspencer/microservices/trainer/src/main/java/com/microservices/trainer/domain/Role.java
